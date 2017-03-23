@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { InputPropertyComponent } from './input-property.component';
+import { OutputPropertyComponent } from './output-property.component';
 
 @Component({
   selector: 'app-data-binding',
@@ -48,6 +49,10 @@ export class DataBindingComponent implements OnInit {
 
   onMouseSpan() {
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onValorMudou(event) {
+    alert(event.novoValor);
   }
 
   constructor() { }
