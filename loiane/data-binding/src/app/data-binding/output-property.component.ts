@@ -20,7 +20,7 @@ export class OutputPropertyComponent {
 
     @Output() mudouValor = new EventEmitter();
 
-    constructor() {}
+    constructor() {} 
 
     decrementa() {
         this.valor--;

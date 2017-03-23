@@ -1,75 +1,65 @@
-import {
-  Component,
-  OnInit,
-  OnChanges,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy,
-  Input,
-  ViewChild
-} from '@angular/core';
+import { Component,
+            OnInit,
+            OnChanges,
+            DoCheck,
+            AfterContentInit,
+            AfterContentChecked,
+            AfterViewInit,
+            AfterViewChecked,
+            OnDestroy,
+            Input } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
-  selector: 'lifecycle',
-  template: `
-    <p #variavelLocalP >{{valorInicial}}</p>
-    <p>{{ variavelLocalP.textContent }}</p>
-  `,
+    moduleId: module.id,
+    selector: 'lifecycle',
+    template: `
+        <p>{{ valorInicial }}</p>
+    `,
 })
-export class LifeCycleComponent implements OnChanges, OnInit,
-    DoCheck, AfterContentInit, AfterContentChecked,
-    AfterViewInit, AfterViewChecked, OnDestroy  {
 
-      @Input() valorInicial = 10;
+export class LifeCycleComponent implements OnChanges, OnInit, DoCheck,
+       AfterContentInit, AfterContentChecked,
+       AfterViewInit, AfterViewChecked, OnDestroy {
 
-      @ViewChild('variavelLocalP') variavelLocalP : HTMLElement;
-
-      constructor() {
+    @Input() valorInicial = 10;
+    
+    constructor() { 
         this.log('constructor');
-        console.log(this.variavelLocalP);
-      }
+    }
 
-      ngOnChanges() {
+    ngOnChanges() {
         this.log('ngOnChanges');
-        console.log(this.variavelLocalP);
-      }
+    }
 
-      ngOnInit() {
+    ngOnInit() {
         this.log('ngOnInit');
-        console.log(this.variavelLocalP);
-      }
+    }
 
-      ngDoCheck() {
+    ngDoCheck() {
         this.log('ngDoCheck');
-      }
+    }
 
-      ngAfterContentInit() {
+    ngAfterContentInit() {
         this.log('ngAfterContentInit');
-      }
+    }
 
-      ngAfterContentChecked() {
+    ngAfterContentChecked() {
         this.log('ngAfterContentChecked');
-        console.log(this.variavelLocalP);
-      }
+    }
 
-      ngAfterViewInit() {
+    ngAfterViewInit() {
         this.log('ngAfterViewInit');
-      }
+    }
 
-      ngAfterViewChecked() {
+    ngAfterViewChecked() {
         this.log('ngAfterViewChecked');
-        console.log(this.variavelLocalP);
-      }
+    }
 
-      ngOnDestroy() {
+    ngOnDestroy() {
         this.log('ngOnDestroy');
-      }
+    }
 
-      private log(hook: string) {
+    private log(hook: string) {
         console.log(hook);
-      }
+    }
 }
