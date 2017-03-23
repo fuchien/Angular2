@@ -53,3 +53,30 @@
       </div>
     </article>
 </section>
+
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="onClick()">Me clique!!</button>
+      <br><br>
+      <input type="text"
+        (keyup)="onKeyup($event)"
+        (keyup.enter)="onSave(campo.value)"
+        (blur)="onSave(campo.value)"
+        #campo
+      >
+      <div>Conteudo atual: {{ conteudoAtual }}</div>
+      <div>Conteudo salvo: {{ conteudoSalvo }}</div>
+
+      <br><br>
+      <span 
+        (mouseover)="onMouseSpan()"
+        (mouseout)="onMouseSpan()"
+        [class.highlight]="isMouseOver"
+      >
+        Passe o mouse sobre mim!!
+      </span>
+    </div>
+  </article>
+</section>
